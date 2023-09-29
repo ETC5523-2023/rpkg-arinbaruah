@@ -1,11 +1,14 @@
-Package: change-this-to-your-pkg-name
-Title: What the Package Does (One Line, Title Case)
+Package: gradr
+Title: Exploring the vast diversity of the US PhD graduates
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "your@email.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    person("Arindom", "Baruah", , "abar0090@student.monash.edu", role = c("aut", "cre"))
+Description: The gradr package is designed to study explore the diversity among the PhD graduates in The United States.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Language: es
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
+Depends: 
+    R (>= 2.10)
+LazyData: true
