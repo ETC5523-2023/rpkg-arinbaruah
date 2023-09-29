@@ -18,7 +18,7 @@ The development package of the `gradr` package can be installed on R through [Gi
 
 ``` r
 # installing the gradr package
-devtools::install_github("etc5523-2022/rpkg-arinbaruah")
+devtools::install_github("ETC5523-2023/rpkg-arinbaruah")
 ```
 
 After a successful installation of the package, you can use the package through the code below.
