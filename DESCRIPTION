@@ -3,7 +3,9 @@ Title: Exploring the vast diversity of the US PhD graduates
 Version: 0.0.0.9000
 Authors@R: 
     person("Arindom", "Baruah", , "abar0090@student.monash.edu", role = c("aut", "cre"))
-Description: The gradr package is designed to study explore the diversity among the PhD graduates in The United States.
+Description: The gradr package is designed to study and explore the diversity among the PhD graduates in The United States.
+URL: https://github.com/ETC5523-2023/rpkg-arinbaruah.git
+BugReports: https://github.com/ETC5523-2023/rpkg-arinbaruah/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 Language: es
@@ -12,3 +14,7 @@ RoxygenNote: 7.2.3
 Depends: 
     R (>= 2.10)
 LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
