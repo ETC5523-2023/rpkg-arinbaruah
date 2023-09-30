@@ -10,7 +10,7 @@ calc_grads(x)
 \item{x}{The field of research for which, we are interested to calculate the number of PhD graduates}
 }
 \value{
-The number of PhDs who have successfully graduate for a given field of study
+The number of PhDs who have successfully graduated in a given field of study
 }
 \description{
 The function calculates the total number of PhD graduates for the input field of study present in the database. The input field must be a valid PhD field currently practiced in the US.

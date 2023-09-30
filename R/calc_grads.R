@@ -6,7 +6,7 @@
 #' @param x The field of research for which, we are interested to calculate the number of PhD graduates
 #'
 #' @return
-#' The number of PhDs who have successfully graduate for a given field of study
+#' The number of PhDs who have successfully graduated in a given field of study
 #' @import dplyr
 #'
 #'
