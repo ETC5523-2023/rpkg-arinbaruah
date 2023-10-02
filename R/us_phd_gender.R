@@ -1,0 +1,24 @@
+#' US PhD gender diversity
+#'
+#' This dataset contains the information pertaining to the gender diversity among the PhD graduates in the US.
+#' The data encompasses the number of graduates between the time period of 1950-2020.
+#'
+#' @format A data frame with 53 rows and 4 variables.
+#' \describe{
+#'   \item{Year}{The academic year of the gender diversity records}
+#'   \item{Male}{The number of male PhD graduates (in 1000s) for the corresponding academic year}
+#'   \item{Female}{The number of female PhD graduates (in 1000s) for the corresponding academic year}
+#'   \item{History}{An indicator to classify whether the academic year is post or pre 2000}
+#' }
+#' @examples
+#' head(us_phd_gender)
+#' @import dplyr
+#' @import magrittr
+#' @import tidyverse
+#'
+#' @source \url{https://www.statista.com/statistics/185167/number-of-doctoral-degrees-by-gender-since-1950/}
+"us_phd_gender"
+
+library(tidyverse)
+us_phd_gender <- read_csv("data-raw/US_by_gender.csv")
+usethis::use_data(us_phd_gender,overwrite = TRUE)
