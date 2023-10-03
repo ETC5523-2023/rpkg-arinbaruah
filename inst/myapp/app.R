@@ -8,9 +8,6 @@
 #
 
 
-
-
-
 library(shiny)
 library(tidyverse)
 library(ggplot2)
@@ -20,18 +17,12 @@ library(plotly)
 library(shinyWidgets)
 library(RColorBrewer)
 library(shinythemes)
+library(gradr)
 
 
-df <- read_csv("data/phd_by_field.csv")
-df_gender <- read_csv("data/US_by_gender.csv")
+df <- gradr::us_phd_field
+df_gender <- gradr::us_phd_gender
 
-df_gender_stats <-
-  df_gender %>% mutate(
-    Total = Male + Female,
-    Prop_Female = Female /Total,
-    Prop_Male = Male /Total,
-    Gender_ratio = Female / Male
-  )
 
 
 

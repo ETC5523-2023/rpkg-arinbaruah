@@ -17,4 +17,5 @@ The function calculates the total number of PhD graduates for the input field of
 }
 \examples{
 calc_grads("Agricultural economics")
+
 }

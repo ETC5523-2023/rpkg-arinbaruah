@@ -1,0 +1,110 @@
+---
+title: "intro-to-gradr"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{intro-to-gradr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE,message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+# What is the `gradr` package about ? 🧑‍🎓🇺🇸👩‍🎓 
+
+The `gradr` package is designed to study and explore the diversity among the PhD graduates in The United States. The purpose of this app is to:
+
+1. study the number of PhD graduates over the time period of study,
+2. study the educational diversity of the PhD graduates,
+2. study the popular fields of study which yield PhD graduates, and 
+3. study the change in gender diversity over the course of the study. 
+
+
+This vignette will help the user to get started with the 
+
+
+## How to install the `gradr` package?
+
+The `gradr` package is available on the github repository and can be installed on your R environment by using the devtools package as follows:
+
+```{r setup, message=FALSE, warning=FALSE}
+# Code has been commented out below but can be removed to install the package
+
+# devtools::install_github("devtools::install_github("ETC5523-2023/rpkg-arinbaruah"))
+```
+
+Once the library has been successfully installed in your R environment, you can load the R package as follows:
+
+```{r}
+library(gradr)
+```
+
+The `gradr` package has tons of exciting stuff you can explore ! 🤩🥳 
+
+Some of the key features are explained here:
+
+### Access the data for the PhD field of study in US
+
+The `gradr` package includes a dataset `us_phd_field`, a dataframe with **3370 rows** and **5 variables**. The data can be obtained through the code chunk below:
+
+```{r eval=FALSE}
+gradr::us_phd_field
+```
+
+Let us provide you with a glimpse of the dataset:
+
+```{r field, message=FALSE, warning=FALSE}
+library(dplyr)
+glimpse(us_phd_field)
+```
+You can refer to the documentation of the dataset through the codechunk below:
+
+```{r eval=FALSE}
+help("us_phd_field")
+```
+
+
+Hold on ! We have another exciting dataset for you to explore. 
+
+### Access the data for the gender of PhD graduates in the US
+
+The `gradr` package includes a dataset `us_phd_gender`, a dataframe with **53 rows** and **4 variables**. The data can be obtained through the code chunk below:
+
+```{r eval=FALSE}
+gradr::us_phd_gender
+```
+
+Let us provide you with a glimpse of the dataset:
+
+```{r gender, message=FALSE, warning=FALSE}
+library(dplyr)
+glimpse(us_phd_gender)
+```
+
+More details about this dataset can be found by using the code `help("us_phd_gender")`.
+
+### Run the US PhD graduate R Shiny Application
+
+To run the R shiny application, with the following code:
+
+```{r gradapp, eval = FALSE}
+grad_app()
+```
+
+More information about how to use the app can be found in the **about** section of the application. You can refer to the brief help section by running the code `help("grad_app")`.
+
+### Caclulate the number of graduates in a field of study
+
+The package contains a function `calc_grads` to calculate the number of PhD graduates in a specific field of study without having to use the R shiny application. The argument of the function accepts a field of study currently undertaken in the US as per the data. The function can be used as follows: 
+
+- `calc_grads()` : calculates the total number of PhD graduates for the input field of study present in the database. 
+
+```{r calcgrad}
+calc_grads("Agricultural economics")
+```
+For more details : `help(calc_grads)`

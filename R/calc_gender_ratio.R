@@ -17,6 +17,7 @@
 
 calc_gender_ratio <- function(input_stat, input_event) {
   df_gender <- gradr::us_phd_gender
+
   df_gender_stats <-
     df_gender %>% mutate(
       Total = Male + Female,
@@ -24,17 +25,19 @@ calc_gender_ratio <- function(input_stat, input_event) {
       Prop_Male = Male /Total,
       Gender_ratio = Female / Male
     )
+
   df_gender_stats <- df_gender_stats %>% filter(input_event == History)
+
 
   y_label <- reactive({
     req(input_stat)
     if(input_stat == "Gender_ratio"){
       y_label <- "Gender ratio (Female:Male)"
-    } else if(input_event == "Prop_Female"){
+    } else if(input_stat == "Prop_Female"){
       y_label <- "Proportion of females"
-    } else if(input_event == "Prop_Male"){
+    } else if(input_stat == "Prop_Male"){
       y_label <- "Proportion of males"
-    } else{y_label <- "Label issue"}})
+    }})
 
   pl4 <- ggplot(df_gender_stats, aes(x = Year,y = .data[[input_stat]])) +
     geom_point(color = 'darkblue') +

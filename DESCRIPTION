@@ -18,3 +18,11 @@ Suggests:
     knitr,
     rmarkdown,
     testthat (>= 3.0.0)
+VignetteBuilder: knitr
+Imports: 
+    dplyr,
+    ggplot2,
+    shiny,
+    tidyverse,
+    magrittr,
+    plotly

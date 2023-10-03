@@ -5,13 +5,14 @@
 #'
 #' @param x The field of research for which, we are interested to calculate the number of PhD graduates
 #'
+#' @examples
+#' calc_grads("Agricultural economics")
+#'
 #' @return
 #' The number of PhDs who have successfully graduated in a given field of study
 #' @import tidyverse
-#'
-#'
-#' @examples
-#' calc_grads("Agricultural economics")
+#' @export
+
 
 calc_grads <- function(x) {
   value <- gradr::us_phd_field |> group_by(field) |>
