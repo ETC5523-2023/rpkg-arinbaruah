@@ -21,4 +21,4 @@
 
 library(tidyverse)
 us_phd_gender <- read_csv("data-raw/US_by_gender.csv")
-usethis::use_data(us_phd_gender,overwrite = TRUE)
+usethis::use_data(us_phd_gender, overwrite = TRUE)

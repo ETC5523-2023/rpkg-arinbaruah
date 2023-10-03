@@ -7,4 +7,3 @@ URL <- "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/dat
 us_phd_field <- read_csv(URL)
 
 usethis::use_data(us_phd_field, overwrite = TRUE)
-

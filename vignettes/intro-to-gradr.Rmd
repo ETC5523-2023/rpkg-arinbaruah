@@ -25,7 +25,7 @@ The `gradr` package is designed to study and explore the diversity among the PhD
 3. study the change in gender diversity over the course of the study. 
 
 
-This vignette will help the user to get started with the 
+This vignette will help the user to get started with the package.
 
 
 ## How to install the `gradr` package?
@@ -108,3 +108,8 @@ The package contains a function `calc_grads` to calculate the number of PhD grad
 calc_grads("Agricultural economics")
 ```
 For more details : `help(calc_grads)`
+
+## Further Information
+
+For detailed information of the `gradr` package, please visit the [pkgdown](https://etc5523-2022.github.io/rpkg-jval0011/) site.
+

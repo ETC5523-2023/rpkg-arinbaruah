@@ -17,10 +17,9 @@
 #' @examples
 #' head(us_phd_field)
 #'
-#'
 #' @source \url{https://github.com/rfordatascience/tidytuesday/blob/master/data/2019/2019-02-19}
 "us_phd_field"
 
 library(tidyverse)
 us_phd_field <- read_csv("data-raw/phd_by_field.csv")
-usethis::use_data(us_phd_field,overwrite = TRUE)
+usethis::use_data(us_phd_field, overwrite = TRUE)

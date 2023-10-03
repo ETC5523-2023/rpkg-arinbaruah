@@ -15,7 +15,9 @@
 
 
 calc_grads <- function(x) {
-  value <- gradr::us_phd_field |> group_by(field) |>
-    summarise(total = sum(n_phds)) |> filter(field == x)
+  value <- gradr::us_phd_field |>
+    group_by(field) |>
+    summarise(total = sum(n_phds)) |>
+    filter(field == x)
   return(value$total)
 }

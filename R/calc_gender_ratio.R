@@ -21,8 +21,8 @@ calc_gender_ratio <- function(input_stat, input_event) {
   df_gender_stats <-
     df_gender %>% mutate(
       Total = Male + Female,
-      Prop_Female = Female /Total,
-      Prop_Male = Male /Total,
+      Prop_Female = Female / Total,
+      Prop_Male = Male / Total,
       Gender_ratio = Female / Male
     )
 
@@ -31,19 +31,19 @@ calc_gender_ratio <- function(input_stat, input_event) {
 
   y_label <- reactive({
     req(input_stat)
-    if(input_stat == "Gender_ratio"){
+    if (input_stat == "Gender_ratio") {
       y_label <- "Gender ratio (Female:Male)"
-    } else if(input_stat == "Prop_Female"){
+    } else if (input_stat == "Prop_Female") {
       y_label <- "Proportion of females"
-    } else if(input_stat == "Prop_Male"){
+    } else if (input_stat == "Prop_Male") {
       y_label <- "Proportion of males"
-    }})
+    }
+  })
 
-  pl4 <- ggplot(df_gender_stats, aes(x = Year,y = .data[[input_stat]])) +
-    geom_point(color = 'darkblue') +
+  pl4 <- ggplot(df_gender_stats, aes(x = Year, y = .data[[input_stat]])) +
+    geom_point(color = "darkblue") +
     theme_classic() +
-    theme(axis.text.x = element_text(size = 5,face = 'bold',angle= 60)) +
+    theme(axis.text.x = element_text(size = 5, face = "bold", angle = 60)) +
     labs(x = "Year", y = y_label())
   ggplotly(pl4)
-
 }
