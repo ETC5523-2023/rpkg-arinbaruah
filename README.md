@@ -4,7 +4,7 @@
 # gradr
 
 
-The gradr package is designed to study explore the diversity among the PhD graduates in The United States. The purpose of this app is to:
+The gradr package is designed to study and explore the diversity among the PhD graduates in The United States. The purpose of this app is to:
 
 1. study the number of PhD graduates over the time period of study,
 2. study the educational diversity of the PhD graduates,

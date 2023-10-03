@@ -7,12 +7,11 @@
 #'
 #' @return
 #' The number of PhDs who have successfully graduated in a given field of study
-#' @import dplyr
+#' @import tidyverse
 #'
 #'
 #' @examples
 #' calc_grads("Agricultural economics")
-
 
 calc_grads <- function(x) {
   value <- gradr::us_phd_field |> group_by(field) |>

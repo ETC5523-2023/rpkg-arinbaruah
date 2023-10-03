@@ -160,8 +160,8 @@ ui <- fluidPage(theme = shinytheme("flatly"),
                                    "Proportion of Male graduates" = "Prop_Male",
                                    "Gender ratio of graduates (Female:Male)" = "Gender_ratio"
                                    ),
-                       selected = "Prop_Female"),
-        checkboxGroupInput(inputId = "history_gender",
+                       selected = "Gender_ratio"),
+        radioButtons(inputId = "history_gender",
                        label = "Choose period of study:",
                        choices = c("Pre 2000","Post 2000"),
                        selected = "Pre 2000"
@@ -268,15 +268,9 @@ server <- function(input, output) {
 
   output$genderPlot <-renderPlotly({
 
-
-    df_gender_stats_new <- df_gender_stats %>% filter(History %in% input$history_gender)
-
-    pl4 <- ggplot(df_gender_stats_new, aes(x = Year,y = .data[[input$statistic]])) +
-      labs(x = "Year", y = input$statistic) +
-      geom_point(color = 'darkblue') +
-      theme_classic() +
-      labs(x = "Academic Year",y = input$statistic) + theme(axis.text.x = element_text(size = 5,face = 'bold',angle= 60))
-    ggplotly(pl4)
+#### Usage of parametrised function to create an interactive plot
+####    by taking in reactive inputs from the app
+    gradr::calc_gender_ratio(input$statistic,input$history_gender)
 
 
   })
