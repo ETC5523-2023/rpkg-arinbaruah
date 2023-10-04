@@ -111,5 +111,5 @@ For more details : `help(calc_grads)`
 
 ## Further Information
 
-For detailed information of the `gradr` package, please visit the [pkgdown](https://etc5523-2022.github.io/rpkg-jval0011/) site.
+For detailed information of the `gradr` package, please visit the [pkgdown](https://github.com/ETC5523-2023/rpkg-arinbaruah/) site.
 
