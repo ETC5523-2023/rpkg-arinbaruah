@@ -109,6 +109,15 @@ calc_grads("Agricultural economics")
 ```
 For more details : `help(calc_grads)`
 
+### Plot the gender diversity statistic without using the R shiny application
+
+The package contains a function `calc_gender_ratio0` which allows to create a plot to visualise the gender diversity statistic. The function can be called using the code chunk below:
+
+```{r genplot,fig.cap="Gender diversity statistic plot"}
+calc_gender_ratio0("Gender_ratio","Pre 2000")
+```
+For more details : `help(calc_gender_ratio0)`
+
 ## Further Information
 
 For detailed information of the `gradr` package, please visit the [pkgdown](https://github.com/ETC5523-2023/rpkg-arinbaruah/) site.
