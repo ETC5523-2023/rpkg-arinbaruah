@@ -29,6 +29,5 @@ The data encompasses all the number of PhD graduates in the US between the perio
 \examples{
 head(us_phd_field)
 
-
 }
 \keyword{datasets}

@@ -3,7 +3,7 @@
 #' @description
 #' The function calculates the total number of PhD graduates for the input field of study present in the database. The input field must be a valid PhD field currently practiced in the US.
 #'
-#' @param x The field of research for which, we are interested to calculate the number of PhD graduates
+#' @param field_name The field of research for which, we are interested to calculate the number of PhD graduates
 #'
 #' @examples
 #' calc_grads("Agricultural economics")
@@ -14,10 +14,13 @@
 #' @export
 
 
-calc_grads <- function(x) {
+calc_grads <- function(field_name) {
+
+  if (tolower(field_name) %in% tolower(gradr::us_phd_field$field)){
   value <- gradr::us_phd_field |>
     group_by(field) |>
-    summarise(total = sum(n_phds)) |>
-    filter(field == x)
-  return(value$total)
-}
+    summarise(total = sum(n_phds,na.rm = TRUE)) |>
+    filter(tolower(field) == tolower(field_name))
+  return(paste0("There are a total of ",value$total," PhD graduates in the US studying ",field_name))
+  }
+  }

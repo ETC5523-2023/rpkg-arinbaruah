@@ -4,10 +4,10 @@
 \alias{calc_grads}
 \title{Calculate the number of PhD graduates in the respective field}
 \usage{
-calc_grads(x)
+calc_grads(field_name)
 }
 \arguments{
-\item{x}{The field of research for which, we are interested to calculate the number of PhD graduates}
+\item{field_name}{The field of research for which, we are interested to calculate the number of PhD graduates}
 }
 \value{
 The number of PhDs who have successfully graduated in a given field of study

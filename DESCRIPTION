@@ -26,3 +26,4 @@ Imports:
     tidyverse,
     magrittr,
     plotly
+Config/testthat/edition: 3
