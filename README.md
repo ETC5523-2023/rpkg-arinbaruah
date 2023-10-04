@@ -27,3 +27,5 @@ After a successful installation of the package, you can use the package through 
 # loading the library
 library(gradr)
 ```
+
+For a detailed documentation to use the package and explore its various functions, refer to the vignette which can be accessed in the [repository](https://github.com/ETC5523-2023/rpkg-arinbaruah/tree/master/vignettes). A link to the package website will be share on this space shortly.  
