@@ -16,11 +16,15 @@
 
 calc_grads <- function(field_name) {
 
+  field_name <- trimws(field_name)
   if (tolower(field_name) %in% tolower(gradr::us_phd_field$field)){
   value <- gradr::us_phd_field |>
     group_by(field) |>
     summarise(total = sum(n_phds,na.rm = TRUE)) |>
     filter(tolower(field) == tolower(field_name))
   return(paste0("There are a total of ",value$total," PhD graduates in the US studying ",field_name))
+  }
+  else {
+    return(paste0("Sorry ! ",field_name," is not a valid field of study according to the data of PhD graduates in the US"))
   }
   }
