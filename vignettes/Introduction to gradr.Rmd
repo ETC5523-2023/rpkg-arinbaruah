@@ -1,5 +1,5 @@
 ---
-title: "intro-to-gradr"
+title: "Introduction to gradr"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{intro-to-gradr}
@@ -17,6 +17,9 @@ knitr::opts_chunk$set(
 
 # What is the `gradr` package about ? 🧑‍🎓🇺🇸👩‍🎓 
 
+<div class="alert alert-block alert-warning">
+
+
 The `gradr` package is designed to study and explore the diversity among the PhD graduates in The United States. The purpose of this app is to:
 
 1. study the number of PhD graduates over the time period of study,
@@ -24,6 +27,7 @@ The `gradr` package is designed to study and explore the diversity among the PhD
 2. study the popular fields of study which yield PhD graduates, and 
 3. study the change in gender diversity over the course of the study. 
 
+</div>
 
 This vignette will help the user to get started with the package.
 
@@ -32,10 +36,10 @@ This vignette will help the user to get started with the package.
 
 The `gradr` package is available on the github repository and can be installed on your R environment by using the devtools package as follows:
 
-```{r setup, message=FALSE, warning=FALSE}
-# Code has been commented out below but can be removed to install the package
+```{r setup,eval=FALSE, message=FALSE, warning=FALSE}
+# install the package
 
-# devtools::install_github("devtools::install_github("ETC5523-2023/rpkg-arinbaruah"))
+devtools::install_github("devtools::install_github("ETC5523-2023/rpkg-arinbaruah"))
 ```
 
 Once the library has been successfully installed in your R environment, you can load the R package as follows:
@@ -111,12 +115,22 @@ For more details : `help(calc_grads)`
 
 ### Plot the gender diversity statistic without using the R shiny application
 
-The package contains a function `calc_gender_ratio0` which allows to create a plot to visualise the gender diversity statistic. The function can be called using the code chunk below:
+The package contains a function `calc_gender_ratio0` which allows to create a parametrised plot version of the R Shiny app to visualise the gender diversity statistic without launching the Shiny application. The function can be called using the code chunk below:
 
 ```{r genplot,fig.cap="Gender diversity statistic plot"}
-calc_gender_ratio0("Gender_ratio","Pre 2000")
+calc_gender_ratio0(input_stat = "Gender_ratio",input_event = "Pre 2000")
 ```
 For more details : `help(calc_gender_ratio0)`
+
+An additional function to implement the above code within the `gradr` Shiny application has also been created which accepts the reactive elements of the application user interface as its inputs has also been built into the function and can be called in as follows:
+
+```{r eval=FALSE}
+# Run the function within the Shiny application
+
+calc_gender_ratio(input_event,input_gender)
+
+```
+
 
 ## Further Information
 

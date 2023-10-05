@@ -41,7 +41,7 @@
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="articles/intro-to-gradr.html">intro-to-gradr</a>
+    <a class="dropdown-item" href="articles/Introduction%20to%20gradr.html">Introduction to gradr</a>
   </div>
 </li>
       </ul>
@@ -63,17 +63,18 @@
   </div>
 </nav><div class="container template-home">
 <div class="row">
-  <main id="main" class="col-md-9"><p>🧑‍🎓🇺🇸👩‍🎓</p>
-<div class="section level1">
+  <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="gradr">gradr<a class="anchor" aria-label="anchor" href="#gradr"></a>
 </h1></div>
-<p>The gradr package is designed to study and explore the diversity among the PhD graduates in The United States. The purpose of this app is to:</p>
+<div class="alert alert-block alert-warning">
+<p>🧑‍🎓🇺🇸👩‍🎓 The <code>gradr</code> package is designed to study and explore the diversity among the PhD graduates in The United States. The purpose of this app is to:</p>
 <ol style="list-style-type: decimal">
 <li>study the number of PhD graduates over the time period of study,</li>
 <li>study the educational diversity of the PhD graduates,</li>
 <li>study the popular fields of study which yield PhD graduates, and</li>
 <li>study the change in gender diversity over the course of the study.</li>
 </ol>
+</div>
 </div>
 <div class="section level1">
 <h1 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -82,11 +83,52 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># installing the gradr package</span></span>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"ETC5523-2023/rpkg-arinbaruah"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level1">
+<h1 id="loading-the-library">Loading the library<a class="anchor" aria-label="anchor" href="#loading-the-library"></a>
+</h1>
 <p>After a successful installation of the package, you can use the package through the code below.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># loading the library</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ETC5523-2023/rpkg-arinbaruah.git" class="external-link">gradr</a></span><span class="op">)</span></span></code></pre></div>
-<p>For a detailed documentation to use the package and explore its various functions, refer to the vignette which can be accessed in the <a href="https://github.com/ETC5523-2023/rpkg-arinbaruah/tree/master/vignettes" class="external-link">repository</a>. A link to the package website will be share on this space shortly.</p>
+</div>
+<div class="section level1">
+<h1 id="access-the-data-for-the-phd-field-of-study-in-us">Access the data for the PhD field of study in US<a class="anchor" aria-label="anchor" href="#access-the-data-for-the-phd-field-of-study-in-us"></a>
+</h1>
+<p>The <code>gradr</code> package includes a dataset <code>us_phd_field</code>, a dataframe with <strong>3370 rows</strong> and <strong>5 variables</strong>. The data can be obtained through the code chunk below:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">gradr</span><span class="fu">::</span><span class="va"><a href="reference/us_phd_field.html">us_phd_field</a></span></span></code></pre></div>
+<p>Let us provide you with a glimpse of the dataset:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">us_phd_field</span><span class="op">)</span></span></code></pre></div>
+<p>You can refer to the documentation of the dataset through the codechunk below:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/help.html" class="external-link">help</a></span><span class="op">(</span><span class="st">"us_phd_field"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level1">
+<h1 id="plot-the-gender-diversity-statistic-without-using-the-r-shiny-application">Plot the gender diversity statistic without using the R shiny application<a class="anchor" aria-label="anchor" href="#plot-the-gender-diversity-statistic-without-using-the-r-shiny-application"></a>
+</h1>
+<p>The package contains a function <code>calc_gender_ratio0</code> which allows to create a parametrised plot version of the R Shiny app to visualise the gender diversity statistic without launching the Shiny application. The function can be called using the code chunk below:</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/calc_gender_ratio0.html">calc_gender_ratio0</a></span><span class="op">(</span>input_stat <span class="op">=</span> <span class="st">"Gender_ratio"</span>,input_event <span class="op">=</span> <span class="st">"Pre 2000"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level1">
+<h1 id="caclulate-the-number-of-graduates-in-a-field-of-study">Caclulate the number of graduates in a field of study<a class="anchor" aria-label="anchor" href="#caclulate-the-number-of-graduates-in-a-field-of-study"></a>
+</h1>
+<p>The package contains a function <code>calc_grads</code> to calculate the number of PhD graduates in a specific field of study without having to use the R shiny application. The argument of the function accepts a field of study currently undertaken in the US as per the data. The function can be used as follows:</p>
+<ul>
+<li>
+<code><a href="reference/calc_grads.html">calc_grads()</a></code> : calculates the total number of PhD graduates for the input field of study present in the database.</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/calc_grads.html">calc_grads</a></span><span class="op">(</span><span class="st">"Agricultural economics"</span><span class="op">)</span></span></code></pre></div>
+<p>For more details : <code><a href="reference/calc_grads.html">help(calc_grads)</a></code></p>
+</div>
+<div class="section level1">
+<h1 id="more-details">More details<a class="anchor" aria-label="anchor" href="#more-details"></a>
+</h1>
+<p>For a detailed documentation to use the package and explore its various functions, refer to the vignette which can be accessed in the <a href="https://github.com/ETC5523-2023/rpkg-arinbaruah/tree/master/vignettes" class="external-link">repository</a>. A link to the package website will be shared on this space shortly.</p>
 </div>
 
   </main><aside class="col-md-3"><div class="links">

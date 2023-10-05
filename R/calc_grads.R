@@ -14,10 +14,13 @@
 #' @export
 
 
-calc_grads <- function(field_name) {
+calc_grads <- function(field_name = "miss_val") {
 
   field_name <- trimws(field_name)
-  if (tolower(field_name) %in% tolower(gradr::us_phd_field$field)){
+  if (field_name == "miss_val" ){
+    return(paste("The argument 'field_name' is missing. Please provide a valid field of study."))
+  }
+  else if (tolower(field_name) %in% tolower(gradr::us_phd_field$field)){
   value <- gradr::us_phd_field |>
     group_by(field) |>
     summarise(total = sum(n_phds,na.rm = TRUE)) |>

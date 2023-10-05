@@ -60,3 +60,16 @@ test_that("calc_grads notifies the user of an invalid field name which does not 
 
 })
 
+
+test_that("calc_grads notifies the user of a missing argument value if no argument is provided as an input to the function, test6", {
+
+
+
+
+  test_grad<- paste("The argument 'field_name' is missing. Please provide a valid field of study.")
+
+  x <- calc_grads()
+  expect_equal(x,test_grad)
+
+})
+
