@@ -134,5 +134,5 @@ calc_gender_ratio(input_event,input_gender)
 
 ## Further Information
 
-For detailed information of the `gradr` package, please visit the [pkgdown](https://github.com/ETC5523-2023/rpkg-arinbaruah/) site.
+For detailed information of the `gradr` package, please visit the [github repository](https://github.com/ETC5523-2023/rpkg-arinbaruah/).
 
