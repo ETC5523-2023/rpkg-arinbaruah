@@ -80,6 +80,7 @@
 <div class="section level2">
 <h2 id="what-is-the-gradr-package-about">What is the <code>gradr</code> package about ? 🧑‍🎓🇺🇸👩‍🎓<a class="anchor" aria-label="anchor" href="#what-is-the-gradr-package-about"></a>
 </h2>
+<div class="alert alert-block alert-warning">
 <p>The <code>gradr</code> package is designed to study and explore the
 diversity among the PhD graduates in The United States. The purpose of
 this app is to:</p>
@@ -92,6 +93,7 @@ and</li>
 <li>study the change in gender diversity over the course of the
 study.</li>
 </ol>
+</div>
 <p>This vignette will help the user to get started with the package.</p>
 <div class="section level3">
 <h3 id="how-to-install-the-gradr-package">How to install the <code>gradr</code> package?<a class="anchor" aria-label="anchor" href="#how-to-install-the-gradr-package"></a>
@@ -99,10 +101,9 @@ study.</li>
 <p>The <code>gradr</code> package is available on the github repository
 and can be installed on your R environment by using the devtools package
 as follows:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Code has been commented out below but can be removed to install the package</span></span>
-<span></span>
-<span><span class="co"># devtools::install_github("devtools::install_github("ETC5523-2023/rpkg-arinbaruah"))</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># install the package</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"devtools::install_github("</span>ETC5523<span class="dv">-2023</span><span class="sc">/</span>rpkg<span class="sc">-</span>arinbaruah<span class="st">"))</span></span></code></pre></div>
 <p>Once the library has been successfully installed in your R
 environment, you can load the R package as follows:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
@@ -192,16 +193,26 @@ graduates for the input field of study present in the database.</li>
 application<a class="anchor" aria-label="anchor" href="#plot-the-gender-diversity-statistic-without-using-the-r-shiny-application"></a>
 </h4>
 <p>The package contains a function <code>calc_gender_ratio0</code> which
-allows to create a plot to visualise the gender diversity statistic. The
-function can be called using the code chunk below:</p>
+allows to create a parametrised plot version of the R Shiny app to
+visualise the gender diversity statistic without launching the Shiny
+application. The function can be called using the code chunk below:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_gender_ratio0.html">calc_gender_ratio0</a></span><span class="op">(</span><span class="st">"Gender_ratio"</span>,<span class="st">"Pre 2000"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/calc_gender_ratio0.html">calc_gender_ratio0</a></span><span class="op">(</span>input_stat <span class="op">=</span> <span class="st">"Gender_ratio"</span>,input_event <span class="op">=</span> <span class="st">"Pre 2000"</span><span class="op">)</span></span></code></pre></div>
 <div class="figure">
 <img src="intro-to-gradr_files/figure-html/genplot-1.png" alt="Gender diversity statistic plot" width="700"><p class="caption">
 Gender diversity statistic plot
 </p>
 </div>
 <p>For more details : <code><a href="../reference/calc_gender_ratio0.html">help(calc_gender_ratio0)</a></code></p>
+<p>An additional function to implement the above code within the
+<code>gradr</code> Shiny application has also been created which accepts
+the reactive elements of the application user interface as its inputs
+has also been built into the function and can be called in as
+follows:</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Run the function within the Shiny application</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/calc_gender_ratio.html">calc_gender_ratio</a></span><span class="op">(</span><span class="va">input_event</span>,<span class="va">input_gender</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level3">

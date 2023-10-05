@@ -1,5 +1,5 @@
 ---
-title: "Introduction to gradr"
+title: "intro-to-gradr"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{intro-to-gradr}

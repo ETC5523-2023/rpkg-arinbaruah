@@ -4,7 +4,7 @@
 \alias{calc_grads}
 \title{Calculate the number of PhD graduates in the respective field}
 \usage{
-calc_grads(field_name)
+calc_grads(field_name = "miss_val")
 }
 \arguments{
 \item{field_name}{The field of research for which, we are interested to calculate the number of PhD graduates}
