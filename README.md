@@ -59,7 +59,7 @@ The package contains a function `calc_gender_ratio0` which allows to create a pa
 calc_gender_ratio0(input_stat = "Gender_ratio",input_event = "Pre 2000")
 ```
 
-# Caclulate the number of graduates in a field of study
+# Calculate the number of graduates in a field of study
 
 The package contains a function `calc_grads` to calculate the number of PhD graduates in a specific field of study without having to use the R shiny application. The argument of the function accepts a field of study currently undertaken in the US as per the data. The function can be used as follows: 
 
